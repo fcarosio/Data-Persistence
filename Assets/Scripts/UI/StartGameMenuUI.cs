@@ -29,7 +29,16 @@ public class StartGameMenuUI : MonoBehaviour
 
     void ShowBestScore()
     {
-        bestScoreText.text = "No best score recorded yet";
+        DataStorage dataStorage = DataStorage.Instance;
+        DataStorage.Score bestPlayer = dataStorage.BestPlayer;
+        if (bestPlayer != null)
+        {
+            bestScoreText.text = "Best Score : " + bestPlayer.playerName + " : " + bestPlayer.score;
+        }
+        else
+        {
+            bestScoreText.text = "No best score recorded yet";
+        }
     }
 
     void StartGame()

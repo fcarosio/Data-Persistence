@@ -87,7 +87,7 @@ public class MainManager : MonoBehaviour
         DataStorage dataStorage = DataStorage.Instance;
         if (dataStorage != null)
         {
-            DataStorage.Score data = dataStorage.CurrentPlayer;
+            DataStorage.Score data = dataStorage.BestPlayer ?? dataStorage.CurrentPlayer;
             BestScoreText.text = "Best Score : " + data.playerName + " : " + data.score;
         }
     }
