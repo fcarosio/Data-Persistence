@@ -34,6 +34,9 @@ public class StartGameMenuUI : MonoBehaviour
 
     void StartGame()
     {
+        DataStorage dataStorage = DataStorage.Instance;
+        dataStorage.CreateNewPlayer(playerNameText.text);
+
         SceneManager.LoadScene(1);
     }
 
